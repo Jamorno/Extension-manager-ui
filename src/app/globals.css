@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+:root {
+  --background: #d6e2f5;
+  --logoColor: #091540;
+  --navbarBackground: #fbfdfe;
+  --modeButtonGray: #ededed;
+  --fontColor: #212636;
+  --filterButton: white;
+  --filterHoverButton: #c7c7c7;
+  --filterActiveFont: white;
+  --filterActiveButton: #c7221a;
+  --extensionCard: white;
+  --descriptionFont: #545969;
+  --removeButton: #0d1226;
+  --removeBorder: #c7c7c7;
+  --removeHoverButton: #c7221a;
+  --removeHoverFont: white;
+  --toggleBackground: #c7c7c7;
+  --basetoggle: white;
+  --toggleActiveBackground: #c7221a;
+}
+
+.dark-mode {
+  --background: #0d1226;
+  --logoColor: white;
+  --navbarBackground: #212636;
+  --modeButtonGray: #545969;
+  --fontColor: white;
+  --filterButton: #212636;
+  --filterHoverButton: #545969;
+  --filterActiveFont: #0d1226;
+  --filterActiveButton: #f25c54;
+  --extensionCard: #212636;
+  --descriptionFont: #c7c7c7;
+  --removeButton: #c7c7c7;
+  --removeBorder: #545969;
+  --removeHoverButton: #f25c54;
+  --removeHoverFont: #0d1226;
+  --toggleBackground: #545969;
+  --basetoggle: white;
+  --toggleActiveBackground: #f25c54;
+}
+
+.logo-wrapper {
+  color: var(--logoColor);
+}
+
+body {
+  margin: 1rem;
+  transition: 0.1s;
+  background: var(--background);
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  body {
+    margin: 1rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1536px) {
+  body {
+    margin: 2rem 8rem;
+  }
+}
+
+/* navigation bar ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--navbarBackground);
+}
+
+.button-mode {
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: var(--modeButtonGray);
+}
+
+.button-mode:hover {
+  transition: 0.4s;
+  cursor: pointer;
+  background-color: var(--grayColor);
+}
+
+.extension-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* heading title */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--fontColor);
+}
+
+/* filter button */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--fontColor);
+}
+
+.filter-btn {
+  font-size: 18px;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--filterButton);
+}
+
+.filter-btn:hover {
+  transition: 0.4s;
+  background-color: var(--filterHoverButton);
+}
+
+.filter-btn.active {
+  color: var(--filterActiveFont);
+  transition: 0.4s;
+  background-color: var(--filterActiveButton);
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .extension-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .filter-btn {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1536px) {
+  .extension-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .filter-btn {
+    font-size: 16px;
+  }
+}
+
+/* extension card ==========================================================================  */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem
+}
+
+.extension-cards {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--extensionCard);
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.name {
+  font-weight: bold;
+  color: var(--fontColor);
+}
+
+.description {
+  font-size: 16px;
+  color: var(--descriptionFont);
+}
+
+.bottom-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.remove-btn {
+  color: var(--removeButton);
+  font-size: 14px;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--removeBorder);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: var(--removeHoverFont);
+  transition: 0.4s;
+  background-color: var(--removeHoverButton);
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 18px;
+}
+
+/* Hide default checkbox */
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* slider background */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: var(--toggleBackground);
+}
+
+/* circle toggle */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 1px;
+  bottom: 1.5px;
+  border-radius: 32px;
+  transition: 0.4s;
+  background-color: var(--basetoggle);
+}
+
+.toggle input:checked+.slider {
+  background-color: var(--toggleActiveBackground);
+}
+
+.toggle input:checked+.slider::before {
+  transform: translateX(14px);
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-card {
+    padding-top: 2rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1536px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bottom-card {
+    padding-top: 2rem;
+  }
+}
