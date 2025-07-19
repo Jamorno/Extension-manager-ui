@@ -48,7 +48,6 @@
 
 body {
   margin: 1rem;
-  transition: 0.1s;
   background: var(--background);
 }
 
@@ -83,6 +82,8 @@ body {
 }
 
 .button-mode:hover {
+  width: 35px;
+  height: 35px;
   transition: 0.4s;
   cursor: pointer;
   background-color: var(--grayColor);
@@ -97,7 +98,7 @@ body {
 
 /* heading title */
 .title {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: bold;
   text-align: center;
   color: var(--fontColor);
@@ -112,7 +113,7 @@ body {
 }
 
 .filter-btn {
-  font-size: 18px;
+  font-size: 1.125rem;
   border-radius: 2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -138,11 +139,11 @@ body {
   }
 
   .title {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .filter-btn {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 
@@ -154,11 +155,11 @@ body {
   }
 
   .title {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .filter-btn {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -180,6 +181,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: start;
+  height: 100px;
   gap: 1rem;
 }
 
@@ -189,7 +191,7 @@ body {
 }
 
 .description {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--descriptionFont);
 }
 
@@ -202,7 +204,7 @@ body {
 
 .remove-btn {
   color: var(--removeButton);
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 0.3rem 0.8rem;
   border: 1px solid var(--removeBorder);
   border-radius: 1rem;
@@ -255,11 +257,11 @@ body {
   background-color: var(--basetoggle);
 }
 
-.toggle input:checked+.slider {
+.slider.toggle-active {
   background-color: var(--toggleActiveBackground);
 }
 
-.toggle input:checked+.slider::before {
+.slider.toggle-active::before {
   transform: translateX(14px);
 }
 

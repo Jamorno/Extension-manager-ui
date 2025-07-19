@@ -28,7 +28,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <main>
       <NavigationBar selected={selected} setSelected={setSelected} />
 
       <div className="cards-container">
@@ -41,6 +41,6 @@ export default function Home() {
           />
         ))}
       </div>
-    </div>
+    </main>
   )
 }

@@ -24,11 +24,11 @@ export default function ExtensionCard({
 
       {/* toggle */}
       <div className="bottom-card">
-        <button className="remove-btn" onClick={onRemove}>Remove</button>
+        <button type="button" className="remove-btn" onClick={onRemove}>Remove</button>
 
         <label className="toggle">
-          <input type="checkbox" checked={item.isActive} onChange={onToggle} />
-          <span className="slider"></span>
+          <input type="checkbox" checked={item.isActive} onChange={onToggle} aria-label={`Toggle ${item.name}`} />
+          <span className={`slider ${item.isActive ? "toggle-active" : ""}`}></span>
         </label>
       </div>
     </div>
